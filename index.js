@@ -71,6 +71,29 @@ const table=document.getElementById("table");
 db.ref("/Requests").once("value").then(snapshot=>{
   for(let [key,value] of Object.entries(snapshot.val())){
       console.log(value)
+      const tab=`
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Table number</th>
+      <th scope="col">food name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>${value.address}</td>
+      <td>${value.foods[0].produName}to</td>
+      <td>${value.foods[0].price}</td>
+      <td>${value.foods[0].quantity}</td>
+      <td><button type="button">completed</button></td>
+    </tr>
+  </tbody>
+</table>
+      `
       const msgHTML = `
         <div class="msg-bubble">
           <div class="msg-info">
@@ -81,6 +104,6 @@ db.ref("/Requests").once("value").then(snapshot=>{
           <div class="msg-text">${value.foods[0].quantity}</div>
         </div>
     `
-    table.insertAdjacentHTML('beforeend', msgHTML)
+    table.insertAdjacentHTML('beforeend', tab)
   }
 })
