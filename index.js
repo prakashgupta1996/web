@@ -89,7 +89,7 @@ db.ref("/Requests").once("value").then(snapshot=>{
       <td>${value.foods[0].produName}to</td>
       <td>${value.foods[0].price}</td>
       <td>${value.foods[0].quantity}</td>
-      <td><button type="button">completed</button></td>
+      <td><button class="btn1" type="button" data-id="${key}">completed</button></td>
     </tr>
   </tbody>
 </table>
@@ -107,3 +107,13 @@ db.ref("/Requests").once("value").then(snapshot=>{
     table.insertAdjacentHTML('beforeend', tab)
   }
 })
+let Button=document.querySelectorAll('button.btn1');
+console.log(Button)
+Button.forEach(function (item, idx) {
+  item.addEventListener('click', function (e) {
+      console.log(e)
+  });
+});
+const del=(key)=>{
+  return db.ref(`/Requests/${key}`)
+}
