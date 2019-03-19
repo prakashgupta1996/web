@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+<head>
+  <title>Firbase web basic</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  <!--Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="table">
+
+  </div>
+
+  
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCKfCcJseL4zcZn_7vqgRKn67FRzzV7mXs",
+    authDomain: "foodorderapp-424a7.firebaseapp.com",
+    databaseURL: "https://foodorderapp-424a7.firebaseio.com",
+    projectId: "foodorderapp-424a7",
+    storageBucket: "foodorderapp-424a7.appspot.com",
+    messagingSenderId: "939453934131"
+  };
+  firebase.initializeApp(config);
+  const db= firebase.database();
+</script>
+
+  
+  <script src="index.js"></script>
+
+  </body>
+</html>
